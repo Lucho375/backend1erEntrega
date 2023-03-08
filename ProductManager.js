@@ -5,9 +5,10 @@ class ProductManager {
     addProduct(prod) {
         this.idAuto = this.idAuto + 1;
 
-        if (Object.values(prod).length !== 6) {
+        if (Object.values(prod).length < 5) {
             throw new Error("Todos los campos del producto son obligatorios");
         }
+
         return this.products.push({ ...prod, id: this.idAuto });
     }
 
@@ -36,4 +37,4 @@ const productExample = {
 
 newProduct.addProduct(productExample);
 newProduct.getProducts(); // [products]
-newProduct.getProductById(2); // error
+// newProduct.getProductById(2);
