@@ -5,7 +5,7 @@ class ProductManager {
     addProduct(prod) {
         this.idAuto = this.idAuto + 1;
 
-        if (Object.values(prod).length < 5) {
+        if (Object.values(prod).some((item) => !item)) {
             throw new Error("Todos los campos del producto son obligatorios");
         }
 
